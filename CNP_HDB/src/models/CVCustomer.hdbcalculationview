@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="CVCustomer" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="CVCustomer"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="S_CUSTOMER">
+    <resourceUri>S_CUSTOMER</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_CUSTOMER" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="CUSTID">
+        <descriptions defaultDescription="CUSTID"/>
+      </viewAttribute>
+      <viewAttribute id="FNAME">
+        <descriptions defaultDescription="FNAME"/>
+      </viewAttribute>
+      <viewAttribute id="LNAME">
+        <descriptions defaultDescription="LNAME"/>
+      </viewAttribute>
+      <viewAttribute id="MOBILE">
+        <descriptions defaultDescription="MOBILE"/>
+      </viewAttribute>
+      <viewAttribute id="EMAIL">
+        <descriptions defaultDescription="EMAIL"/>
+      </viewAttribute>
+      <viewAttribute id="COUNTRY">
+        <descriptions defaultDescription="COUNTRY"/>
+      </viewAttribute>
+      <viewAttribute id="FLYERID">
+        <descriptions defaultDescription="FLYERID"/>
+      </viewAttribute>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <restrictedViewAttributes/>
+    <input node="S_CUSTOMER">
+      <mapping xsi:type="Calculation:AttributeMapping" target="CUSTID" source="CUSTID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FNAME" source="FNAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LNAME" source="LNAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MOBILE" source="MOBILE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EMAIL" source="EMAIL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COUNTRY" source="COUNTRY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FLYERID" source="FLYERID"/>
+    </input>
+    <filter>&quot;FNAME&quot; != 'Kevin'</filter>
+  </calculationView>
+</calculationViews>
+<logicalModel id="P_CUSTOMER">
+  <attributes>
+    <attribute id="CUSTID" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CUSTID"/>
+      <keyMapping columnObjectName="P_CUSTOMER" columnName="CUSTID"/>
+    </attribute>
+    <attribute id="FNAME" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FNAME"/>
+      <keyMapping columnObjectName="P_CUSTOMER" columnName="FNAME"/>
+    </attribute>
+    <attribute id="LNAME" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LNAME"/>
+      <keyMapping columnObjectName="P_CUSTOMER" columnName="LNAME"/>
+    </attribute>
+    <attribute id="MOBILE" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MOBILE"/>
+      <keyMapping columnObjectName="P_CUSTOMER" columnName="MOBILE"/>
+    </attribute>
+    <attribute id="EMAIL" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EMAIL"/>
+      <keyMapping columnObjectName="P_CUSTOMER" columnName="EMAIL"/>
+    </attribute>
+    <attribute id="COUNTRY" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="COUNTRY"/>
+      <keyMapping columnObjectName="P_CUSTOMER" columnName="COUNTRY"/>
+    </attribute>
+    <attribute id="FLYERID" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FLYERID"/>
+      <keyMapping columnObjectName="P_CUSTOMER" columnName="FLYERID"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="92" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="P_CUSTOMER" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="CVConnection" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="CVConnection"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="S_CONNECTION">
+    <resourceUri>S_CONNECTION</resourceUri>
+  </DataSource>
+  <DataSource id="CV_AIRPORT">
+    <resourceUri>CV_AIRPORT</resourceUri>
+  </DataSource>
+  <DataSource id="PCV_AIRPORT_2$$$$CV_AIRPORT$$">
+    <resourceUri>CV_AIRPORT</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="P_CONNECTION">
+    <viewAttributes>
+      <viewAttribute id="FLIGHT">
+        <descriptions defaultDescription="FLIGHT"/>
+      </viewAttribute>
+      <viewAttribute id="FROMAP">
+        <descriptions defaultDescription="FROMAP"/>
+      </viewAttribute>
+      <viewAttribute id="TOAP">
+        <descriptions defaultDescription="TOAP"/>
+      </viewAttribute>
+      <viewAttribute id="DEPT">
+        <descriptions defaultDescription="DEPT"/>
+      </viewAttribute>
+      <viewAttribute id="ARRT">
+        <descriptions defaultDescription="ARRT"/>
+      </viewAttribute>
+      <viewAttribute id="MILES">
+        <descriptions defaultDescription="MILES"/>
+      </viewAttribute>
+      <viewAttribute id="SSTARTD">
+        <descriptions defaultDescription="SSTARTD"/>
+      </viewAttribute>
+      <viewAttribute id="SENDD">
+        <descriptions defaultDescription="SENDD"/>
+      </viewAttribute>
+      <viewAttribute id="ESPRICE">
+        <descriptions defaultDescription="ESPRICE"/>
+      </viewAttribute>
+      <viewAttribute id="EPPRICE">
+        <descriptions defaultDescription="EPPRICE"/>
+      </viewAttribute>
+      <viewAttribute id="BSPRICE">
+        <descriptions defaultDescription="BSPRICE"/>
+      </viewAttribute>
+      <viewAttribute id="BPPRICE">
+        <descriptions defaultDescription="BPPRICE"/>
+      </viewAttribute>
+      <viewAttribute id="FSPRICE">
+        <descriptions defaultDescription="FSPRICE"/>
+      </viewAttribute>
+      <viewAttribute id="FPPRICE">
+        <descriptions defaultDescription="FPPRICE"/>
+      </viewAttribute>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <restrictedViewAttributes/>
+    <input node="S_CONNECTION">
+      <mapping xsi:type="Calculation:AttributeMapping" target="FLIGHT" source="FLIGHT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FROMAP" source="FROMAP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TOAP" source="TOAP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DEPT" source="DEPT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ARRT" source="ARRT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MILES" source="MILES"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SSTARTD" source="SSTARTD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SENDD" source="SENDD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ESPRICE" source="ESPRICE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EPPRICE" source="EPPRICE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BSPRICE" source="BSPRICE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BPPRICE" source="BPPRICE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FSPRICE" source="FSPRICE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FPPRICE" source="FPPRICE"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="PCV_AIRPORT">
+    <viewAttributes>
+      <viewAttribute id="CODE">
+        <descriptions defaultDescription="CODE"/>
+      </viewAttribute>
+      <viewAttribute id="NAME">
+        <descriptions defaultDescription="NAME"/>
+      </viewAttribute>
+      <viewAttribute id="CITY">
+        <descriptions defaultDescription="CITY"/>
+      </viewAttribute>
+      <viewAttribute id="TIMEZONE">
+        <descriptions defaultDescription="TIMEZONE"/>
+      </viewAttribute>
+      <viewAttribute id="LATITUDE">
+        <descriptions defaultDescription="LATITUDE"/>
+      </viewAttribute>
+      <viewAttribute id="COUNTRY">
+        <descriptions defaultDescription="COUNTRY"/>
+      </viewAttribute>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <restrictedViewAttributes/>
+    <input node="CV_AIRPORT">
+      <mapping xsi:type="Calculation:AttributeMapping" target="CODE" source="CODE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME" source="NAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CITY" source="CITY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TIMEZONE" source="TIMEZONE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LATITUDE" source="LATITUDE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COUNTRY" source="COUNTRY"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_1" cardinality="CN_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="FLIGHT">
+        <descriptions defaultDescription="FLIGHT"/>
+      </viewAttribute>
+      <viewAttribute id="FROMAP">
+        <descriptions defaultDescription="FROMAP"/>
+      </viewAttribute>
+      <viewAttribute id="TOAP">
+        <descriptions defaultDescription="TOAP"/>
+      </viewAttribute>
+      <viewAttribute id="DEPT">
+        <descriptions defaultDescription="DEPT"/>
+      </viewAttribute>
+      <viewAttribute id="ARRT">
+        <descriptions defaultDescription="ARRT"/>
+      </viewAttribute>
+      <viewAttribute id="MILES">
+        <descriptions defaultDescription="MILES"/>
+      </viewAttribute>
+      <viewAttribute id="SSTARTD">
+        <descriptions defaultDescription="SSTARTD"/>
+      </viewAttribute>
+      <viewAttribute id="SENDD">
+        <descriptions defaultDescription="SENDD"/>
+      </viewAttribute>
+      <viewAttribute id="ESPRICE">
+        <descriptions defaultDescription="ESPRICE"/>
+      </viewAttribute>
+      <viewAttribute id="EPPRICE">
+        <descriptions defaultDescription="EPPRICE"/>
+      </viewAttribute>
+      <viewAttribute id="BSPRICE">
+        <descriptions defaultDescription="BSPRICE"/>
+      </viewAttribute>
+      <viewAttribute id="BPPRICE">
+        <descriptions defaultDescription="BPPRICE"/>
+      </viewAttribute>
+      <viewAttribute id="FSPRICE">
+        <descriptions defaultDescription="FSPRICE"/>
+      </viewAttribute>
+      <viewAttribute id="FPPRICE">
+        <descriptions defaultDescription="FPPRICE"/>
+      </viewAttribute>
+      <viewAttribute id="FROM_CODE">
+        <descriptions defaultDescription="CODE"/>
+      </viewAttribute>
+      <viewAttribute id="FROM_NAME">
+        <descriptions defaultDescription="NAME"/>
+      </viewAttribute>
+      <viewAttribute id="FROM_CITY">
+        <descriptions defaultDescription="CITY"/>
+      </viewAttribute>
+      <viewAttribute id="FROM_TIMEZONE">
+        <descriptions defaultDescription="TIMEZONE"/>
+      </viewAttribute>
+      <viewAttribute id="FROM_LATITUDE">
+        <descriptions defaultDescription="LATITUDE"/>
+      </viewAttribute>
+      <viewAttribute id="FROM_COUNTRY">
+        <descriptions defaultDescription="COUNTRY"/>
+      </viewAttribute>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <restrictedViewAttributes/>
+    <input node="P_CONNECTION">
+      <mapping xsi:type="Calculation:AttributeMapping" target="FLIGHT" source="FLIGHT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FROMAP" source="FROMAP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TOAP" source="TOAP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DEPT" source="DEPT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ARRT" source="ARRT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MILES" source="MILES"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SSTARTD" source="SSTARTD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SENDD" source="SENDD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ESPRICE" source="ESPRICE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EPPRICE" source="EPPRICE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BSPRICE" source="BSPRICE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BPPRICE" source="BPPRICE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FSPRICE" source="FSPRICE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FPPRICE" source="FPPRICE"/>
+    </input>
+    <input node="PCV_AIRPORT">
+      <mapping xsi:type="Calculation:AttributeMapping" target="FROM_CODE" source="CODE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FROM_NAME" source="NAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FROM_CITY" source="CITY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FROM_TIMEZONE" source="TIMEZONE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FROM_LATITUDE" source="LATITUDE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FROM_COUNTRY" source="COUNTRY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FROMAP" source="CODE"/>
+    </input>
+    <joinAttribute name="FROMAP"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="PCV_AIRPORT_2">
+    <viewAttributes>
+      <viewAttribute id="CODE">
+        <descriptions defaultDescription="CODE"/>
+      </viewAttribute>
+      <viewAttribute id="NAME">
+        <descriptions defaultDescription="NAME"/>
+      </viewAttribute>
+      <viewAttribute id="CITY">
+        <descriptions defaultDescription="CITY"/>
+      </viewAttribute>
+      <viewAttribute id="TIMEZONE">
+        <descriptions defaultDescription="TIMEZONE"/>
+      </viewAttribute>
+      <viewAttribute id="LATITUDE">
+        <descriptions defaultDescription="LATITUDE"/>
+      </viewAttribute>
+      <viewAttribute id="COUNTRY">
+        <descriptions defaultDescription="COUNTRY"/>
+      </viewAttribute>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <restrictedViewAttributes/>
+    <input node="PCV_AIRPORT_2$$$$CV_AIRPORT$$">
+      <mapping xsi:type="Calculation:AttributeMapping" target="CODE" source="CODE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME" source="NAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CITY" source="CITY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TIMEZONE" source="TIMEZONE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LATITUDE" source="LATITUDE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COUNTRY" source="COUNTRY"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_3" cardinality="CN_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="CODE">
+        <descriptions defaultDescription="CODE"/>
+      </viewAttribute>
+      <viewAttribute id="NAME">
+        <descriptions defaultDescription="NAME"/>
+      </viewAttribute>
+      <viewAttribute id="CITY">
+        <descriptions defaultDescription="CITY"/>
+      </viewAttribute>
+      <viewAttribute id="TIMEZONE">
+        <descriptions defaultDescription="TIMEZONE"/>
+      </viewAttribute>
+      <viewAttribute id="LATITUDE">
+        <descriptions defaultDescription="LATITUDE"/>
+      </viewAttribute>
+      <viewAttribute id="COUNTRY">
+        <descriptions defaultDescription="COUNTRY"/>
+      </viewAttribute>
+      <viewAttribute id="FLIGHT">
+        <descriptions defaultDescription="FLIGHT"/>
+      </viewAttribute>
+      <viewAttribute id="FROMAP">
+        <descriptions defaultDescription="FROMAP"/>
+      </viewAttribute>
+      <viewAttribute id="TOAP">
+        <descriptions defaultDescription="TOAP"/>
+      </viewAttribute>
+      <viewAttribute id="DEPT">
+        <descriptions defaultDescription="DEPT"/>
+      </viewAttribute>
+      <viewAttribute id="ARRT">
+        <descriptions defaultDescription="ARRT"/>
+      </viewAttribute>
+      <viewAttribute id="MILES">
+        <descriptions defaultDescription="MILES"/>
+      </viewAttribute>
+      <viewAttribute id="SSTARTD">
+        <descriptions defaultDescription="SSTARTD"/>
+      </viewAttribute>
+      <viewAttribute id="SENDD">
+        <descriptions defaultDescription="SENDD"/>
+      </viewAttribute>
+      <viewAttribute id="ESPRICE">
+        <descriptions defaultDescription="ESPRICE"/>
+      </viewAttribute>
+      <viewAttribute id="EPPRICE">
+        <descriptions defaultDescription="EPPRICE"/>
+      </viewAttribute>
+      <viewAttribute id="BSPRICE">
+        <descriptions defaultDescription="BSPRICE"/>
+      </viewAttribute>
+      <viewAttribute id="BPPRICE">
+        <descriptions defaultDescription="BPPRICE"/>
+      </viewAttribute>
+      <viewAttribute id="FSPRICE">
+        <descriptions defaultDescription="FSPRICE"/>
+      </viewAttribute>
+      <viewAttribute id="FPPRICE">
+        <descriptions defaultDescription="FPPRICE"/>
+      </viewAttribute>
+      <viewAttribute id="FROM_CODE">
+        <descriptions defaultDescription="CODE"/>
+      </viewAttribute>
+      <viewAttribute id="FROM_NAME">
+        <descriptions defaultDescription="NAME"/>
+      </viewAttribute>
+      <viewAttribute id="FROM_CITY">
+        <descriptions defaultDescription="CITY"/>
+      </viewAttribute>
+      <viewAttribute id="FROM_TIMEZONE">
+        <descriptions defaultDescription="TIMEZONE"/>
+      </viewAttribute>
+      <viewAttribute id="FROM_LATITUDE">
+        <descriptions defaultDescription="LATITUDE"/>
+      </viewAttribute>
+      <viewAttribute id="FROM_COUNTRY">
+        <descriptions defaultDescription="COUNTRY"/>
+      </viewAttribute>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <restrictedViewAttributes/>
+    <input node="Join_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="FLIGHT" source="FLIGHT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FROMAP" source="FROMAP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TOAP" source="TOAP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DEPT" source="DEPT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ARRT" source="ARRT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MILES" source="MILES"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SSTARTD" source="SSTARTD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SENDD" source="SENDD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ESPRICE" source="ESPRICE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EPPRICE" source="EPPRICE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BSPRICE" source="BSPRICE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BPPRICE" source="BPPRICE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FSPRICE" source="FSPRICE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FPPRICE" source="FPPRICE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FROM_CODE" source="FROM_CODE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FROM_NAME" source="FROM_NAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FROM_CITY" source="FROM_CITY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FROM_TIMEZONE" source="FROM_TIMEZONE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FROM_LATITUDE" source="FROM_LATITUDE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FROM_COUNTRY" source="FROM_COUNTRY"/>
+    </input>
+    <input node="PCV_AIRPORT_2">
+      <mapping xsi:type="Calculation:AttributeMapping" target="CODE" source="CODE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME" source="NAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CITY" source="CITY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TIMEZONE" source="TIMEZONE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LATITUDE" source="LATITUDE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COUNTRY" source="COUNTRY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TOAP" source="CODE"/>
+    </input>
+    <joinAttribute name="TOAP"/>
+  </calculationView>
+</calculationViews>
+<logicalModel id="Join_3">
+  <attributes>
+    <attribute id="CODE" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CODE"/>
+      <keyMapping columnObjectName="Join_3" columnName="CODE"/>
+    </attribute>
+    <attribute id="NAME" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NAME"/>
+      <keyMapping columnObjectName="Join_3" columnName="NAME"/>
+    </attribute>
+    <attribute id="CITY" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CITY"/>
+      <keyMapping columnObjectName="Join_3" columnName="CITY"/>
+    </attribute>
+    <attribute id="TIMEZONE" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TIMEZONE"/>
+      <keyMapping columnObjectName="Join_3" columnName="TIMEZONE"/>
+    </attribute>
+    <attribute id="LATITUDE" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LATITUDE"/>
+      <keyMapping columnObjectName="Join_3" columnName="LATITUDE"/>
+    </attribute>
+    <attribute id="COUNTRY" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="COUNTRY"/>
+      <keyMapping columnObjectName="Join_3" columnName="COUNTRY"/>
+    </attribute>
+    <attribute id="FLIGHT" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FLIGHT"/>
+      <keyMapping columnObjectName="Join_3" columnName="FLIGHT"/>
+    </attribute>
+    <attribute id="FROMAP" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FROMAP"/>
+      <keyMapping columnObjectName="Join_3" columnName="FROMAP"/>
+    </attribute>
+    <attribute id="TOAP" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TOAP"/>
+      <keyMapping columnObjectName="Join_3" columnName="TOAP"/>
+    </attribute>
+    <attribute id="DEPT" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DEPT"/>
+      <keyMapping columnObjectName="Join_3" columnName="DEPT"/>
+    </attribute>
+    <attribute id="ARRT" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ARRT"/>
+      <keyMapping columnObjectName="Join_3" columnName="ARRT"/>
+    </attribute>
+    <attribute id="MILES" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MILES"/>
+      <keyMapping columnObjectName="Join_3" columnName="MILES"/>
+    </attribute>
+    <attribute id="SSTARTD" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SSTARTD"/>
+      <keyMapping columnObjectName="Join_3" columnName="SSTARTD"/>
+    </attribute>
+    <attribute id="SENDD" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SENDD"/>
+      <keyMapping columnObjectName="Join_3" columnName="SENDD"/>
+    </attribute>
+    <attribute id="ESPRICE" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ESPRICE"/>
+      <keyMapping columnObjectName="Join_3" columnName="ESPRICE"/>
+    </attribute>
+    <attribute id="EPPRICE" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EPPRICE"/>
+      <keyMapping columnObjectName="Join_3" columnName="EPPRICE"/>
+    </attribute>
+    <attribute id="BSPRICE" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BSPRICE"/>
+      <keyMapping columnObjectName="Join_3" columnName="BSPRICE"/>
+    </attribute>
+    <attribute id="BPPRICE" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BPPRICE"/>
+      <keyMapping columnObjectName="Join_3" columnName="BPPRICE"/>
+    </attribute>
+    <attribute id="FSPRICE" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FSPRICE"/>
+      <keyMapping columnObjectName="Join_3" columnName="FSPRICE"/>
+    </attribute>
+    <attribute id="FPPRICE" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FPPRICE"/>
+      <keyMapping columnObjectName="Join_3" columnName="FPPRICE"/>
+    </attribute>
+    <attribute id="FROM_CODE" order="21" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CODE"/>
+      <keyMapping columnObjectName="Join_3" columnName="FROM_CODE"/>
+    </attribute>
+    <attribute id="FROM_NAME" order="22" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NAME"/>
+      <keyMapping columnObjectName="Join_3" columnName="FROM_NAME"/>
+    </attribute>
+    <attribute id="FROM_CITY" order="23" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CITY"/>
+      <keyMapping columnObjectName="Join_3" columnName="FROM_CITY"/>
+    </attribute>
+    <attribute id="FROM_TIMEZONE" order="24" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TIMEZONE"/>
+      <keyMapping columnObjectName="Join_3" columnName="FROM_TIMEZONE"/>
+    </attribute>
+    <attribute id="FROM_LATITUDE" order="25" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LATITUDE"/>
+      <keyMapping columnObjectName="Join_3" columnName="FROM_LATITUDE"/>
+    </attribute>
+    <attribute id="FROM_COUNTRY" order="26" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="COUNTRY"/>
+      <keyMapping columnObjectName="Join_3" columnName="FROM_COUNTRY"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="328.6900820831794" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="P_CONNECTION" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="536.9999976158142"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="PCV_AIRPORT" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="536.9999976158142"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="118.66666666666669" y="376.9999988079071"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="P_CONNECTION" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="PCV_AIRPORT" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape expanded="true" modelObjectName="PCV_AIRPORT_2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="395.83468516943316" y="376.9999988079071"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_3" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="328.6900820831794" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Join_1" modelObjectNameSpace="Join_3" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="PCV_AIRPORT_2" modelObjectNameSpace="Join_3" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

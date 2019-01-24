@@ -1,0 +1,56 @@
+{
+  "S_AIRPORT": {
+    "target": {
+      "object": "AIRPORT",
+      "schema": "CHICKEN_WINGS"
+    }
+  },
+  "S_BOOKING": {
+    "target": {
+      "object": "BOOKING",
+      "schema": "CHICKEN_WINGS"
+    }
+  },
+  "S_CONNECTION": {
+    "target": {
+      "object": "CONNECTION",
+      "schema": "CHICKEN_WINGS"
+    }
+  },
+  "S_CREW": {
+    "target": {
+      "object": "CREW",
+      "schema": "CHICKEN_WINGS"
+    }
+  },
+  "S_CUSTOMER": {
+    "target": {
+      "object": "CUSTOMER",
+      "schema": "CHICKEN_WINGS"
+    }
+  },
+  "S_FLGIHT": {
+    "target": {
+      "object": "FLIGHT",
+      "schema": "CHICKEN_WINGS"
+    }
+  },
+  "S_PLANE": {
+    "target": {
+      "object": "PLANE",
+      "schema": "CHICKEN_WINGS"
+    }
+  },
+  "S_PRICE_CALENDAR": {
+    "target": {
+      "object": "PRICE_CALENDAR",
+      "schema": "CHICKEN_WINGS"
+    }
+  },
+  "S_SEAT": {
+    "target": {
+      "object": "SEAT",
+      "schema": "CHICKEN_WINGS"
+    }
+  }
+}

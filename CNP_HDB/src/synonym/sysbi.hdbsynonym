@@ -1,0 +1,8 @@
+{
+  "SYN_TIME_DIM": {
+    "target": {
+      "object": "M_TIME_DIMENSION",
+      "schema": "_SYS_BI"
+    }
+  }
+}

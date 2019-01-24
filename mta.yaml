@@ -1,0 +1,59 @@
+ID: CNP_HANDSON
+_schema-version: '2.1'
+description: CNP Hands on exercise
+version: 0.0.1
+
+modules:
+ - name: CNP_HDB
+   type: hdb
+   path: CNP_HDB
+   requires:
+    - name: hdi_CNP_HDB
+      properties:
+        TARGET_CONTAINER: ~{hdi-container-name}
+
+
+
+    - name: cross-container-service-1
+      group: SERVICE_REPLACEMENTS
+
+      properties:
+        key: ServiceName_1
+        service: ~{the-service-name}
+                          
+
+
+
+    - name: cross-container-service-2
+      group: SERVICE_REPLACEMENTS
+
+      properties:
+        key: ServiceName_2
+        service: ~{the-service-name}
+                          
+
+
+resources:
+ - name: hdi_CNP_HDB
+   parameters:
+      config:
+         schema: CNPDEMO
+   properties:
+      hdi-container-name: ${service-name}
+   type: com.sap.xs.hdi-container
+
+ - name: cross-container-service-1
+   parameters:
+      service-name: CHICKEN_WINGS_UPS
+   properties:
+      the-service-name: ${service-name}
+   type: org.cloudfoundry.existing-service
+
+
+ - name: cross-container-service-2
+   parameters:
+      service-name: SYS_BI_UPS
+   properties:
+      the-service-name: ${service-name}
+   type: org.cloudfoundry.existing-service
+
